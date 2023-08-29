@@ -1,7 +1,8 @@
 package test;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -12,15 +13,14 @@ import main.Relogio;
 class RelogioTest {
 	Relogio relogio = new Relogio();
 	Relogio rolex;
-	SimpleDateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
+	DateTimeFormatter formatoHora = DateTimeFormatter.ofPattern("HH:mm:ss");
 
 	@Test
 	void testReiniciarParaMeiaNoite() {
 
-		Date horarioReiniciado = relogio.reiniciarParaMeiaNoite();
+		LocalTime horarioReiniciado = relogio.reiniciarParaMeiaNoite();
 		String original = relogio.obterHora();
 
-		SimpleDateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
 
 		System.out.println("Horário reiniciado: " + formatoHora.format(horarioReiniciado));
 
