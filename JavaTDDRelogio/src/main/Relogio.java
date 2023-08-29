@@ -43,7 +43,7 @@ public class Relogio {
 			LocalTime horaInicio = LocalTime.parse(horaInicioStr, formatoHora);
 			LocalTime horaFim = LocalTime.parse(horaFimStr, formatoHora);
 
-			Duration duracao = Duration.between(horaFim, horaInicio);
+			Duration duracao = Duration.between(horaInicio, horaFim);
 			long segundosTotais = duracao.getSeconds();
 
 			long horas = segundosTotais / 3600;

@@ -42,7 +42,7 @@ class RelogioTest {
 	@Test
 	void testCornometro() {
 		relogio.reiniciarParaMeiaNoite();
-		String test = relogio.iniciarCronometro(); // testar com 10:20:30 e depois 05:10:15
+		String test = relogio.iniciarCronometro(); // testar com 05:10:15 e depois 10:20:30
 		relogio.imprimirHora();
 		Assertions.assertEquals("Tempo decorrido: 05:10:15", test);
 		System.out.println("Teste 3 pronto");
@@ -74,7 +74,7 @@ class RelogioTest {
 		Assertions.assertThrows(DomainException.class, () -> {
 			relogio.colocarHorario(-01, 00, 00);
 		});
-		System.out.println("Teste 6 pronto");
+		System.out.println("Teste 7 pronto");
 	}
 
 }
